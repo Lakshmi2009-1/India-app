@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safar-e-Azadi</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg,#E72508, #ff9933, #ffffff, #138808, #0B5319);
+        background-size: 300% 300%;
+        animation: bgMove 8s infinite alternate;
+    }
+    @keyframes bgMove {
+        0% { background-position: left; }
+        100% { background-position: right; }
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+    .back-btn {
+        text-decoration: none;
+        background: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        color: #138808;
+        transition: 0.3s;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .back-btn:hover {
+        background: #138808;
+        color: white;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 10px 0 40px;
+        font-size: 2rem;
+        color: #fff;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #fff;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+    }
+
+    .container {
+        padding: 15px 30px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+    }
+    .container::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: -10px;
+        background-color: white;
+        border: 4px solid #ff9933;
+        top: 20px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .left { left: 0; }
+    .right { left: 50%; }
+    .right::after { left: -10px; }
+
+    .content {
+        padding: 20px;
+        background-color: rgba(255,255,255,0.95);
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease-out;
+    }
+    .content.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .content img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #ff9933;
+    }
+
+    .content h3 {
+        margin-top: 0;
+        color: #ff6600;
+    }
+    .content p {
+        margin: 0;
+        color: #333;
+        font-size: 0.95rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .timeline::after { left: 31px; }
+        .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+        .container::after { left: 15px; }
+        .right { left: 0; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="back-btn">← Back</a>
+</header>
+
+<h1>🇮🇳 Safar-e-Azadi – India’s Journey 🇮🇳</h1>
+
+<div class="timeline">
+
+    <div class="container left">
+        <div class="content">
+            <img src="/images/independence.jpeg" alt="Independence">
+            <div>
+                <h3>1947 – Independence</h3>
+                <p>India gained freedom from British rule on 15 August 1947.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <img src="/images/constitution.jpeg" alt="Constitution">
+            <div>
+                <h3>1950 – Constitution</h3>
+                <p>The world’s longest written constitution came into effect on 26 January 1950.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <img src="/images/elections.jpeg" alt="Elections">
+            <div>
+                <h3>1951 – First General Elections</h3>
+                <p>India held its first democratic elections with over 173 million voters.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <img src="/images/aryabhata.jpeg" alt="Aryabhata">
+            <div>
+                <h3>1975 – Aryabhata Launch</h3>
+                <p>India’s first satellite Aryabhata was launched into space.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <img src="/images/kalpna.jpg" alt="Kalpana Chawla">
+            <div>
+                <h3>1997 – Kalpana Chawla</h3>
+                <p>Kalpana Chawla became the first woman of Indian origin in space.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <img src="/images/pokhran.jpeg" alt="Pokhran">
+            <div>
+                <h3>1998 – Pokhran-II</h3>
+                <p>India successfully conducted nuclear tests in Pokhran, Rajasthan.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <img src="/images/abhinav.jpeg" alt="Abhinav Bindra">
+            <div>
+                <h3>2008 – Olympic Gold</h3>
+                <p>Abhinav Bindra won India’s first individual Olympic gold medal in shooting.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <img src="/images/mars.jpeg" alt="Mars Mission">
+            <div>
+                <h3>2014 – Mars Mission</h3>
+                <p>India became the first Asian country to reach Mars orbit in its first attempt.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <img src="/images/chandrayan2.jpeg" alt="Chandrayaan-2">
+            <div>
+                <h3>2019 – Chandrayaan-2</h3>
+                <p>India’s second lunar mission attempted a landing near the Moon’s south pole.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <img src="/images/neeraj.jpeg" alt="Tokyo Olympics">
+            <div>
+                <h3>2021 – Tokyo Olympics</h3>
+                <p>India won its first gold medal in athletics by Neeraj Chopra.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <img src="/images/chandrayan3.jpeg" alt="Chandrayaan-3">
+            <div>
+                <h3>2023 – Chandrayaan-3</h3>
+                <p>India became the first country to land near the Moon’s south pole.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const items = document.querySelectorAll('.content');
+    const onScroll = () => {
+        items.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                item.classList.add('show');
+            }
+        });
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+</script>
+
+</body>
+</html>

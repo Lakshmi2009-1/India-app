@@ -1,0 +1,217 @@
+/* ========== RESET ========== */
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { height:100%; }
+
+/* ========== BODY & BACKGROUND (tricolor) ========== */
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(to bottom, #D95D0B 0%, #ffffff 50%, #138808 100%);
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px; /* reserve space for fixed navbar */
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  z-index: 200;
+  gap: 12px;
+}
+
+.logo { display:flex; align-items:center; gap:8px; font-weight:700; font-size:1.1rem; }
+.logo-text { color:#ff9933; margin-left:4px; }
+
+/* nav links - desktop */
+.nav-links {
+  display:flex;
+  gap:18px;
+  list-style:none;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 10px;
+  border-radius:6px;
+  transition: all .2s ease;
+}
+.nav-links a:hover { background: rgba(255,255,255,0.08); color:#ffdd66; }
+
+/* hamburger button */
+.menu-toggle {
+  display:none;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+  padding:8px;
+}
+.menu-toggle:focus { outline:none; }
+
+/* simple hamburger lines */
+.hamburger, .hamburger::before, .hamburger::after {
+  display:block;
+  width:22px;
+  height:2px;
+  background: #fff;
+  border-radius:2px;
+  position:relative;
+}
+.hamburger::before, .hamburger::after {
+  content:"";
+  position:absolute;
+  left:0;
+}
+.hamburger::before { top:-7px; }
+.hamburger::after  { top:7px; }
+
+/* ========== MAIN / HERO ========== */
+.page-wrap {
+  width:100%;
+  max-width:1100px;
+  margin: 0 auto;
+  flex: 1 0 auto;
+  display:flex;
+  overflow: auto;
+  flex-direction:column;
+}
+
+/* top heading block */
+.hero-top {
+  text-align:center;
+  padding: 20px 22px;
+}
+
+/* animated gradient heading */
+.animated-heading {
+  font-size: clamp(1.6rem, 3.6vw, 2.8rem);
+  font-weight: 800;
+  line-height:1.05;
+  margin-bottom:12px;
+
+  /* gradient text */
+  background: linear-gradient(90deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  animation: gradientShift 5s ease infinite, headingGlow 3s ease-in-out infinite alternate;
+  position: relative;
+}
+
+/* underline animation */
+.animated-heading::after {
+  content: "";
+  display:block;
+  width:0%;
+  height:4px;
+  background: linear-gradient(90deg,#ff9933,#ffffff,#138808);
+  margin:10px auto 0;
+  border-radius:2px;
+  animation: underlineGrow 1.6s ease forwards;
+}
+
+/* small intro paragraph */
+.intro-text {
+  max-width:860px;
+  margin: 12px auto 0;
+  color: rgba(0,0,0,0.85);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+}
+
+/* center chakra area - takes remaining space and centers chakra */
+.hero-center {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10vh 20px; /* keep chakra vertically centered in viewport */
+  flex: 1 0 auto;
+}
+
+.chakra-wrap { display:flex; align-items:center; justify-content:center; }
+.chakra {
+  width: 200px;
+  max-width: 40%;
+  animation: spin 8s linear infinite;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18));
+}
+
+/* ABOUT section (target of Know More) */
+.about-section {
+  background: rgba(0,0,0,0.06);
+  padding: 20px 22px;
+}
+.about-inner {
+  max-width:900px;
+  margin: 0 auto;
+  text-align:center;
+  color: rgba(0,0,0,0.9);
+}
+.about-inner p { line-height:1.6; }
+
+/* BOTTOM BUTTON fixed center */
+.bottom-btn {
+  margin-top: 10px;
+}
+.know-more {
+  display:inline-block;
+  background: #111;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 28px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: all .25s ease;
+}
+.know-more:hover {
+  transform: translateY(-3px);
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+}
+
+/* ========== KEYFRAMES ========== */
+@keyframes spin { from{ transform: rotate(0deg);} to{ transform: rotate(360deg);} }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes headingGlow {
+  from { text-shadow: 0 2px 6px rgba(255,153,51,0.15); }
+  to   { text-shadow: 0 8px 26px rgba(51,204,51,0.12); }
+}
+@keyframes underlineGrow { to { width: 60%; } }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .chakra { width: 150px; }
+  .animated-heading { font-size: clamp(1.5rem,4.5vw,2.2rem); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display:none; position:absolute; right:16px; top:70px; background: rgba(0,0,0,0.92);
+               padding:12px 14px; border-radius:8px; flex-direction:column; gap:8px; min-width:140px; }
+  .nav-links.show { display:flex; }
+
+  .menu-toggle { display:block; }
+
+  .nav-links a { padding:10px 8px; display:block; }
+  .intro-text { padding: 0 12px; }
+  .hero-top { padding: 18px 10px 6px; }
+  .bottom-btn { bottom: 16px; }
+}
